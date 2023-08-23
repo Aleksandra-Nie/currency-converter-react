@@ -1,0 +1,6 @@
+.container {
+    font-family: "Roboto", sans-serif;
+    max-width: 600px;
+    width: 100%;
+    margin: 50px auto 20px;
+}
