@@ -13,6 +13,10 @@ To use a currency converter, you typically enter the amount of money you want to
 ## Demo
 https://aleksandra-nie.github.io/currency-converter-react/
 ## Tools
+- React
+- Webpack
+- Create React App
+- Babel
 - HTML
 - CSS
 - JavaScript
