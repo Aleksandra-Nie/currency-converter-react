@@ -2,12 +2,14 @@ import Form from "./Form";
 import Footer from "./Footer";
 import Container from "./Container";
 
+
 function App() {
+
   return (
     <Container>
-      <Form>
+      <Form
 
-      </Form>
+      />
       <Footer />
     </Container>
   );

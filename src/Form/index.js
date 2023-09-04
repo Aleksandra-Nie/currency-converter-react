@@ -45,6 +45,15 @@ const Form = () => {
         event.preventDefault();
         getResult(amount, currencies, currencyFrom, currencyTo);
         setAmount("");
+        getCurrencyRate(currencies, currencyFrom, currencyTo);
+    };
+
+    const resetForm = (event) => {
+        event.preventDefault();
+        setCurrencyFrom("PLN - Złotówka polska");
+        setCurrencyTo("USD - Dolar amerykański");
+        setResult("");
+        setCurrencyRate("");
     };
 
     return (
@@ -90,24 +99,24 @@ const Form = () => {
                             ))}
                         </select>
                     </label>
-                    <p>
-                        <label>
-                            <span className="form__labelText">Przelicz na: </span>
-                            <select
-                                onClick={currencyInput}
-                                className="form__amountField"
-                                name="currencyTo"
-                                value={currencyTo}
-                                onChange={({ target }) => setCurrencyTo(target.value)}
-                            >
-                                {currencies.map((currency) => (
-                                    <option key={currency.name}>
-                                        {currency.name}
-                                    </option>
-                                ))}
-                            </select>
-                        </label>
-                    </p>
+                </p>
+                <p>
+                    <label>
+                        <span className="form__labelText">Przelicz na: </span>
+                        <select
+                            onClick={currencyInput}
+                            className="form__amountField"
+                            name="currencyTo"
+                            value={currencyTo}
+                            onChange={({ target }) => setCurrencyTo(target.value)}
+                        >
+                            {currencies.map((currency) => (
+                                <option key={currency.name}>
+                                    {currency.name}
+                                </option>
+                            ))}
+                        </select>
+                    </label>
                 </p>
 
                 <RateResult
@@ -120,10 +129,12 @@ const Form = () => {
                     <button className="button">Przelicz</button>
                 </p>
                 <p>
-                    <button type="reset" className="button button--reset">Resetuj</button>
+                    <button
+                        onClick={resetForm}
+                        type="reset" className="button button--reset">Resetuj</button>
                 </p>
             </fieldset>
-        </form>
+        </form >
     );
 };
 
