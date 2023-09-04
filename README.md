@@ -11,7 +11,7 @@ To use a currency converter, you typically enter the amount of money you want to
 
 ![currency-converter-react](images/Animation2.gif)
 ## Demo
-https://aleksandra-nie.github.io/currency-converter/
+https://aleksandra-nie.github.io/currency-converter-react/
 ## Tools
 - HTML
 - CSS
