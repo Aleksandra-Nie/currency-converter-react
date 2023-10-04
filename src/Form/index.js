@@ -1,8 +1,9 @@
 import "./style.css";
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { currencies } from "../currencies.js";
 import Result from "../Result";
 import RateResult from "../RateResult";
+import Clock from "../Clock";
 
 
 
@@ -60,6 +61,7 @@ const Form = () => {
         <form
             onSubmit={onFormSubmit}
         >
+            <Clock />
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Kalkulator walutowy</legend>
                 <p>
