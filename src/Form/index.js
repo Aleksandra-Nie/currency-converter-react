@@ -34,7 +34,7 @@ const Form = () => {
         setCurrencyRate({
             currencyFrom: (currencyFrom).slice(0, 3),
             currencyTo: (currencyTo).slice(0, 3),
-            currencyRateResult: currencyFromRate / currencyToRate
+            currencyRateResult: (currencyFromRate / currencyToRate).toFixed(currencyFrom === currencyTo ? 0 : 4)
         });
     };
 
