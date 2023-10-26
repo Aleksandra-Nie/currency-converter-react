@@ -24,9 +24,9 @@ const Clock = () => {
     }, []);
 
     return (
-        <dev className="clock">
+        <div className="clock">
             Dzisiaj jest {date.toLocaleString(undefined, formatDate)}
-        </dev>
+        </div>
     );
 };
 
