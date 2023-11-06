@@ -1,18 +1,28 @@
-.form__fieldset {
+import styled, { css } from "styled-components";
+
+export const Fieldset = styled.fieldset`
     border-radius: 5px;
     margin-bottom: 20px;
-}
+`;
 
-.form__legend {
+export const Legend = styled.legend`
     text-align: center;
     font-weight: bold;
     font-size: 20px;
     padding: 10px 20px;
     background-color: rgb(208, 227, 252);
     border-radius: 5px;
-}
+`;
 
-.form__amountField {
+export const LabelText = styled.span`
+    margin-right: 5px;
+    max-width: 150px;
+    width: 100%;
+    display: inline-block;
+    font-size: 20px;
+`;
+
+export const AmountField = styled.input`
     padding: 10px;
     max-width: 300px;
     width: 100%;
@@ -20,23 +30,24 @@
     border: 1px solid grey;
     line-height: 1px;
     margin-top: 20px;
-}
 
-.form__amountField:invalid {
-    border: 2px solid red;
-}
+    &:invalid {
+        border: 2px solid red;
+    }
+`;
 
-.form__labelText {
-    margin-right: 5px;
-    max-width: 150px;
+export const StyledSelect = styled.select`
+    padding: 10px;
+    max-width: 300px;
     width: 100%;
-    display: inline-block;
-    font-size: 20px;
-}
+    border-radius: 5px;
+    border: 1px solid grey;
+    line-height: 1px;
+    margin-top: 20px;
+`;
 
-
-.button {
-    display: block;
+export const Button = styled.button`
+ display: block;
     padding: 15px;
     max-width: 300px;
     width: 100%;
@@ -46,34 +57,15 @@
     font-weight: bold;
     border-radius: 50px;
     background-color: rgb(208, 227, 252);
-}
 
-.button:hover {
+    ${({ reset }) => reset && css`
+    margin-top: 5px;
+    `}
+
+    &:hover {
     background-color: rgb(161, 198, 247);
     border-color: rgb(161, 198, 247);
     cursor: pointer;
-}
+    }
+`;
 
-.button--reset {
-    margin-top: 5px;
-}
-
-.form__paragraph {
-    margin-top: 40px;
-    font-size: 20px;
-}
-
-.form__paragraph--exchangeRate {
-    font-size: 16px;
-    color: rgb(161, 198, 247);
-    font-weight: bold;
-    text-align: center;
-}
-
-.form__amount {
-    margin-right: 5px;
-    max-width: 150px;
-    width: 100%;
-    display: inline-block;
-    font-size: 20px;
-}
