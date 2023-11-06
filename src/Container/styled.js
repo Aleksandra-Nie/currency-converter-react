@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Contain = styled.main`
+export const StyledContainer = styled.main`
 font-family: "Roboto", sans-serif;
     max-width: 600px;
     width: 100%;

@@ -1,10 +1,10 @@
-import "./style.css"
+import { StyledFooter } from "./styled";
 
 const Footer = () => (
 
-    <footer className="footer">
+    <StyledFooter>
         Kalkulator przelicza waluty według kursów średnich publikowanych przez Narodowy Bank Polski.
-    </footer>
+    </StyledFooter>
 );
 
 export default Footer;

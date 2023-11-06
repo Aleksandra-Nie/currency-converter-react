@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Timer = styled.div`
+export const StyledClock = styled.div`
   display: flex;
     flex-direction: column;
     align-items: end;
