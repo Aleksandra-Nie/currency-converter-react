@@ -1,12 +1,14 @@
+import { StyledRateResult } from "./styled";
+
 const RateResult = ({ currencyRate }) => (
-    <p className="form__paragraph form__paragraph--exchangeRate">
+    <StyledRateResult exchangerate>
         {
             currencyRate.currencyRateResult
                 ? `1 ${currencyRate.currencyFrom} 
                 = ${currencyRate.currencyRateResult} ${currencyRate.currencyTo}`
                 : ""
         }
-    </p>
+    </StyledRateResult>
 );
 
 export default RateResult;
