@@ -3,7 +3,7 @@ import { currencies } from "../currencies.js";
 import Result from "../Result";
 import RateResult from "../RateResult";
 import Clock from "../Clock";
-import { Fieldset, Legend, LabelText, AmountField, StyledSelect, Button } from "./styled";
+import { StyledFieldset, StyledLegend, StyledLabelText, StyledInput, StyledSelect, StyledButton } from "./styled";
 
 
 const Form = () => {
@@ -61,15 +61,15 @@ const Form = () => {
             onSubmit={onFormSubmit}
         >
             <Clock />
-            <Fieldset>
-                <Legend>Kalkulator walutowy</Legend>
+            <StyledFieldset>
+                <StyledLegend>Kalkulator walutowy</StyledLegend>
                 <p>
                     Pola wymagane oznaczone są *.
                 </p>
                 <p>
                     <label>
-                        <LabelText>Kwota*: </LabelText>
-                        <AmountField
+                        <StyledLabelText>Kwota*: </StyledLabelText>
+                        <StyledInput
                             value={amount}
                             type="number"
                             name="amount"
@@ -84,7 +84,7 @@ const Form = () => {
                 </p>
                 <p>
                     <label>
-                        <LabelText>Przelicz z: </LabelText>
+                        <StyledLabelText>Przelicz z: </StyledLabelText>
                         <StyledSelect
                             onClick={currencyInput}
                             name="currencyFrom"
@@ -101,7 +101,7 @@ const Form = () => {
                 </p>
                 <p>
                     <label>
-                        <LabelText>Przelicz na: </LabelText>
+                        <StyledLabelText>Przelicz na: </StyledLabelText>
                         <StyledSelect
                             onClick={currencyInput}
                             name="currencyTo"
@@ -124,14 +124,14 @@ const Form = () => {
                     result={result}
                 />
                 <p>
-                    <Button>Przelicz</Button>
+                    <StyledButton>Przelicz</StyledButton>
                 </p>
                 <p>
-                    <Button reset
+                    <StyledButton reset
                         onClick={resetForm}
-                        type="reset">Resetuj</Button>
+                        type="reset">Resetuj</StyledButton>
                 </p>
-            </Fieldset>
+            </StyledFieldset>
         </form >
     );
 };

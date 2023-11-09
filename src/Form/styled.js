@@ -1,11 +1,11 @@
 import styled, { css } from "styled-components";
 
-export const Fieldset = styled.fieldset`
+export const StyledFieldset = styled.fieldset`
     border-radius: 5px;
     margin-bottom: 20px;
 `;
 
-export const Legend = styled.legend`
+export const StyledLegend = styled.legend`
     text-align: center;
     font-weight: bold;
     font-size: 20px;
@@ -14,7 +14,7 @@ export const Legend = styled.legend`
     border-radius: 5px;
 `;
 
-export const LabelText = styled.span`
+export const StyledLabelText = styled.span`
     margin-right: 5px;
     max-width: 150px;
     width: 100%;
@@ -22,7 +22,7 @@ export const LabelText = styled.span`
     font-size: 20px;
 `;
 
-export const AmountField = styled.input`
+export const StyledInput = styled.input`
     padding: 10px;
     max-width: 300px;
     width: 100%;
@@ -46,7 +46,7 @@ export const StyledSelect = styled.select`
     margin-top: 20px;
 `;
 
-export const Button = styled.button`
+export const StyledButton = styled.button`
  display: block;
     padding: 15px;
     max-width: 300px;

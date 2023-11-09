@@ -1,8 +1,8 @@
 import { StyledRateResult } from "../RateResult/styled"
-import { LabelText } from "../Form/styled"
+import { StyledLabelText } from "../Form/styled"
 
 const Result = ({ result }) => (
-    <StyledRateResult><LabelText>Kwota wynosi: </LabelText> <strong>
+    <StyledRateResult><StyledLabelText>Kwota wynosi: </StyledLabelText> <strong>
         {result.resultAmount
             ? `${result.inputAmount} ${result.currencyFrom} = ${result.resultAmount} ${result.currencyTo}`
             : ""
