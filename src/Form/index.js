@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { currencies } from "../currencies.js";
 import Result from "../Result";
 import RateResult from "../RateResult";
@@ -12,6 +12,7 @@ const Form = () => {
     const [currencyTo, setCurrencyTo] = useState("USD - Dolar amerykański");
     const [result, setResult] = useState({});
     const [currencyRate, setCurrencyRate] = useState({});
+    const inputRef = useRef(null);
 
     const getResult = (amount, currencies, currencyFrom, currencyTo) => {
         const currencyFromRate = currencies.find((currency) => currency.name === currencyFrom).value;
@@ -56,6 +57,10 @@ const Form = () => {
         setCurrencyRate("");
     };
 
+    const focusInput = () => {
+        inputRef.current.focus();
+    };
+
     return (
         <form
             onSubmit={onFormSubmit}
@@ -70,6 +75,7 @@ const Form = () => {
                     <label>
                         <StyledLabelText>Kwota*: </StyledLabelText>
                         <StyledInput
+                            ref={inputRef}
                             value={amount}
                             type="number"
                             name="amount"
@@ -124,7 +130,10 @@ const Form = () => {
                     result={result}
                 />
                 <p>
-                    <StyledButton>Przelicz</StyledButton>
+                    <StyledButton
+                        onClick={focusInput}
+                    >
+                        Przelicz</StyledButton>
                 </p>
                 <p>
                     <StyledButton
