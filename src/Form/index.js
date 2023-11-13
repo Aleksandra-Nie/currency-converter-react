@@ -127,7 +127,8 @@ const Form = () => {
                     <StyledButton>Przelicz</StyledButton>
                 </p>
                 <p>
-                    <StyledButton reset
+                    <StyledButton
+                        $reset
                         onClick={resetForm}
                         type="reset">Resetuj</StyledButton>
                 </p>

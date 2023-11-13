@@ -58,7 +58,7 @@ export const StyledButton = styled.button`
     border-radius: 50px;
     background-color: rgb(208, 227, 252);
 
-    ${({ reset }) => reset && css`
+    ${({ $reset }) => $reset && css`
     margin-top: 5px;
     `}
 

@@ -1,7 +1,8 @@
 import { StyledRateResult } from "./styled";
 
 const RateResult = ({ currencyRate }) => (
-    <StyledRateResult exchangerate>
+    <StyledRateResult
+        $exchangeRate>
         {
             currencyRate.currencyRateResult
                 ? `1 ${currencyRate.currencyFrom} 
