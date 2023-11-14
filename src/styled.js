@@ -1,4 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
+import background from "./images/background.jpg";
+import backgroundSecond from "./images/background2.jpg";
 
 export const GlobalStyle = createGlobalStyle` 
 html {
@@ -11,7 +13,7 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
-  background-image: url("../images/background.jpg"), url("../images/background2.jpg");
+  background-image: url("${background}"), url("${backgroundSecond}");
   background-position: center;
   background-size: contain, cover;
   background-repeat: no-repeat;
