@@ -47,7 +47,7 @@ export const StyledSelect = styled.select`
 `;
 
 export const StyledButton = styled.button`
- display: block;
+    display: block;
     padding: 15px;
     max-width: 300px;
     width: 100%;
