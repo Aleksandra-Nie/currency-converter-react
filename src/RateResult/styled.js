@@ -6,7 +6,7 @@ export const StyledRateResult = styled.p`
 
     ${({ $exchangeRate }) => $exchangeRate && css`
     font-size: 16px;
-    color: rgb(161, 198, 247);
+    color: ${({ theme }) => theme.color.secondary};
     font-weight: bold;
     text-align: center;
 `}

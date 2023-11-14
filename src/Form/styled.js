@@ -52,19 +52,19 @@ export const StyledButton = styled.button`
     max-width: 300px;
     width: 100%;
     margin: 50px auto 0;
-    border: 2px solid rgb(208, 227, 252);
+    border: 2px solid ${({ theme }) => theme.color.primary};
     font-size: 20px;
     font-weight: bold;
     border-radius: 50px;
-    background-color: rgb(208, 227, 252);
+    background-color: ${({ theme }) => theme.color.primary};
 
     ${({ $reset }) => $reset && css`
     margin-top: 5px;
     `}
 
     &:hover {
-    background-color: rgb(161, 198, 247);
-    border-color: rgb(161, 198, 247);
+    background-color: ${({ theme }) => theme.color.secondary};
+    border-color: ${({ theme }) => theme.color.secondary};
     cursor: pointer;
     }
 `;
