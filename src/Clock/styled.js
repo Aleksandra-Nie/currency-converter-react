@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledClock = styled.div`
-  display: flex;
+    display: flex;
     flex-direction: column;
     align-items: end;
     padding: 10px 20px 30px 10px;

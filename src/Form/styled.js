@@ -59,13 +59,13 @@ export const StyledButton = styled.button`
     background-color: ${({ theme }) => theme.color.primary};
 
     ${({ $reset }) => $reset && css`
-    margin-top: 5px;
+        margin-top: 5px;
     `}
 
     &:hover {
-    background-color: ${({ theme }) => theme.color.secondary};
-    border-color: ${({ theme }) => theme.color.secondary};
-    cursor: pointer;
+        background-color: ${({ theme }) => theme.color.secondary};
+        border-color: ${({ theme }) => theme.color.secondary};
+        cursor: pointer;
     }
 `;
 
