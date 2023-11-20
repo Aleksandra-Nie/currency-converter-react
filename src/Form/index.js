@@ -46,6 +46,7 @@ const Form = () => {
         event.preventDefault();
         getResult(amount, currencies, currencyFrom, currencyTo);
         setAmount("");
+        inputRef.current.focus();
         getCurrencyRate(currencies, currencyFrom, currencyTo);
     };
 
@@ -55,10 +56,6 @@ const Form = () => {
         setCurrencyTo("USD - Dolar amerykański");
         setResult("");
         setCurrencyRate("");
-    };
-
-    const focusInput = () => {
-        inputRef.current.focus();
     };
 
     return (
@@ -83,7 +80,6 @@ const Form = () => {
                             min="0"
                             placeholder="Tutaj wpisz kwotę"
                             required
-                            autoFocus
                             onChange={({ target }) => setAmount(target.value)}
                         />
                     </label>
@@ -130,10 +126,9 @@ const Form = () => {
                     result={result}
                 />
                 <p>
-                    <StyledButton
-                        onClick={focusInput}
-                    >
-                        Przelicz</StyledButton>
+                    <StyledButton>
+                        Przelicz
+                    </StyledButton>
                 </p>
                 <p>
                     <StyledButton
