@@ -3,7 +3,7 @@ import { currencies } from "../currencies.js";
 import Result from "../Result";
 import RateResult from "../RateResult";
 import Clock from "../Clock";
-import { StyledFieldset, StyledLegend, StyledLabelText, StyledInput, StyledSelect, StyledButton } from "./styled";
+import { StyledFieldset, StyledLegend, StyledLabelText, StyledInput, StyledButton } from "./styled";
 
 
 const Form = () => {
@@ -87,7 +87,8 @@ const Form = () => {
                 <p>
                     <label>
                         <StyledLabelText>Przelicz z: </StyledLabelText>
-                        <StyledSelect
+                        <StyledInput
+                            as="select"
                             onClick={currencyInput}
                             name="currencyFrom"
                             value={currencyFrom}
@@ -98,13 +99,14 @@ const Form = () => {
                                     {currency.name}
                                 </option>
                             ))}
-                        </StyledSelect>
+                        </StyledInput>
                     </label>
                 </p>
                 <p>
                     <label>
                         <StyledLabelText>Przelicz na: </StyledLabelText>
-                        <StyledSelect
+                        <StyledInput
+                            as="select"
                             onClick={currencyInput}
                             name="currencyTo"
                             value={currencyTo}
@@ -115,7 +117,7 @@ const Form = () => {
                                     {currency.name}
                                 </option>
                             ))}
-                        </StyledSelect>
+                        </StyledInput>
                     </label>
                 </p>
 

@@ -36,16 +36,6 @@ export const StyledInput = styled.input`
     }
 `;
 
-export const StyledSelect = styled.select`
-    padding: 10px;
-    max-width: 300px;
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid grey;
-    line-height: 1px;
-    margin-top: 20px;
-`;
-
 export const StyledButton = styled.button`
     display: block;
     padding: 15px;
