@@ -4,7 +4,7 @@ import Result from "../Result";
 import RateResult from "../RateResult";
 import Clock from "../Clock";
 import { StyledFieldset, StyledLegend, StyledLabelText, StyledInput, StyledButton } from "./styled";
-
+import { useRatesData } from '../useRatesData.js';
 
 const Form = () => {
     const [amount, setAmount] = useState("");
@@ -13,6 +13,7 @@ const Form = () => {
     const [result, setResult] = useState({});
     const [currencyRate, setCurrencyRate] = useState({});
     const inputRef = useRef(null);
+    const ratesData = useRatesData();
 
     const getResult = (amount, currencies, currencyFrom, currencyTo) => {
         const currencyFromRate = currencies.find((currency) => currency.name === currencyFrom).value;
