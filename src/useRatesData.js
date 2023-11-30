@@ -10,7 +10,7 @@ export const useRatesData = () => {
     const fetchRates = () => {
         (async () => {
             try {
-                const response = await fetch("./currencies.json");
+                const response = await fetch("/public/currencies.json");
                 if (!response.ok) {
                     throw new Error(response.statusText);
                 }
