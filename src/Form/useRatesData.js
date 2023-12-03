@@ -10,7 +10,7 @@ export const useRatesData = () => {
     const fetchRates = () => {
         (async () => {
             try {
-                const response = await fetch("./currencies.json");
+                const response = await fetch("https://api.currencyapi.com/v3/latest?apikey=cur_live_x3gX5H8Zq1f9mQN5zsjAB7yMY3VZ567nubgDSugG");
                 if (!response.ok) {
                     throw new Error(response.statusText);
                 }

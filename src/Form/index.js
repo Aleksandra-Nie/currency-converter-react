@@ -3,7 +3,7 @@ import Result from "../Result";
 import RateResult from "../RateResult";
 import Clock from "../Clock";
 import { StyledFieldset, StyledLegend, StyledLabelText, StyledInput, StyledButton, Message } from "./styled";
-import { useRatesData } from '../useRatesData.js';
+import { useRatesData } from './useRatesData';
 
 const Form = () => {
 
@@ -17,26 +17,26 @@ const Form = () => {
     const rates = ratesData.currencyData;
 
     const getResult = (amount, currencyFrom, currencyTo) => {
-        const currencyFromRate = rates.find((currency) => currency.code === currencyFrom).value;
-        const currencyToRate = rates.find((currency) => currency.code === currencyTo).value;
+        const currencyFromRate = Object.keys(rates).find((currency) => currency === currencyFrom);
+        const currencyToRate = Object.keys(rates).find((currency) => currency === currencyTo);
 
         setResult({
             currencyFrom,
             currencyTo,
             inputAmount: (+amount).toFixed(2),
-            resultAmount: (amount * currencyFromRate / currencyToRate).toFixed(2)
+            resultAmount: (amount * rates[currencyFromRate].value / rates[currencyToRate].value).toFixed(2)
         });
     };
 
     const getCurrencyRate = (currencyFrom, currencyTo) => {
-        const currencyFromRate = rates.find((currency) => currency.code === currencyFrom).value;
-        const currencyToRate = rates.find((currency) => currency.code === currencyTo).value;
+        const currencyFromRate = Object.keys(rates).find((currency) => currency === currencyFrom);
+        const currencyToRate = Object.keys(rates).find((currency) => currency === currencyTo);
 
 
         setCurrencyRate({
             currencyFrom,
             currencyTo,
-            currencyRateResult: (currencyFromRate / currencyToRate).toFixed(currencyFrom === currencyTo ? 0 : 4)
+            currencyRateResult: (rates[currencyFromRate].value / rates[currencyToRate].value).toFixed(currencyFrom === currencyTo ? 0 : 4)
         });
     };
 
@@ -110,10 +110,10 @@ const Form = () => {
                                 >
                                     {Object.keys(rates).map((currency) => (
                                         <option
-                                            key={currency.code}
-                                            value={currency.code}
+                                            key={currency}
+                                            value={currency}
                                         >
-                                            {currency.code}
+                                            {currency}
                                         </option>
                                     ))}
                                 </StyledInput>
@@ -131,10 +131,10 @@ const Form = () => {
                                 >
                                     {Object.keys(rates).map((currency) => (
                                         <option
-                                            key={currency.code}
-                                            value={currency.code}
+                                            key={currency}
+                                            value={currency}
                                         >
-                                            {currency.code}
+                                            {currency}
                                         </option>
                                     ))}
                                 </StyledInput>
