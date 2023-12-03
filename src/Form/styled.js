@@ -59,3 +59,15 @@ export const StyledButton = styled.button`
     }
 `;
 
+export const Message = styled.p`
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+    ${({ $loading }) => $loading && css`
+        color: ${({ theme }) => theme.color.pastelGreen};
+    `};
+    ${({ $failure }) => $failure && css`
+        color: ${({ theme }) => theme.color.burntSienna};
+    `};
+    `;
+
