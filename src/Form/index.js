@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react';
-import { currencies } from "../currencies.js";
 import Result from "../Result";
 import RateResult from "../RateResult";
 import Clock from "../Clock";
@@ -7,17 +6,19 @@ import { StyledFieldset, StyledLegend, StyledLabelText, StyledInput, StyledButto
 import { useRatesData } from '../useRatesData.js';
 
 const Form = () => {
+
     const [amount, setAmount] = useState("");
-    const [currencyFrom, setCurrencyFrom] = useState("PLN - Złotówka polska");
-    const [currencyTo, setCurrencyTo] = useState("USD - Dolar amerykański");
     const [result, setResult] = useState({});
     const [currencyRate, setCurrencyRate] = useState({});
     const inputRef = useRef(null);
     const ratesData = useRatesData();
+    const rates = ratesData.currencyData;
+    const [currencyFrom, setCurrencyFrom] = useState(rates[0].code);
+    const [currencyTo, setCurrencyTo] = useState(rates[1].code);
 
-    const getResult = (amount, currencies, currencyFrom, currencyTo) => {
-        const currencyFromRate = currencies.find((currency) => currency.name === currencyFrom).value;
-        const currencyToRate = currencies.find((currency) => currency.name === currencyTo).value;
+    const getResult = (amount, currencyFrom, currencyTo) => {
+        const currencyFromRate = rates.find((currency) => currency.code === currencyFrom).value;
+        const currencyToRate = rates.find((currency) => currency.code === currencyTo).value;
 
         setResult({
             currencyFrom: (currencyFrom).slice(0, 3),
@@ -27,9 +28,9 @@ const Form = () => {
         });
     };
 
-    const getCurrencyRate = (currencies, currencyFrom, currencyTo) => {
-        const currencyFromRate = currencies.find((currency) => currency.name === currencyFrom).value;
-        const currencyToRate = currencies.find((currency) => currency.name === currencyTo).value;
+    const getCurrencyRate = (currencyFrom, currencyTo) => {
+        const currencyFromRate = rates.find((currency) => currency.code === currencyFrom).value;
+        const currencyToRate = rates.find((currency) => currency.code === currencyTo).value;
 
 
         setCurrencyRate({
@@ -40,21 +41,21 @@ const Form = () => {
     };
 
     const currencyInput = () => {
-        getCurrencyRate(currencies, currencyFrom, currencyTo);
+        getCurrencyRate(currencyFrom, currencyTo);
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        getResult(amount, currencies, currencyFrom, currencyTo);
+        getResult(amount, currencyFrom, currencyTo);
         setAmount("");
         inputRef.current.focus();
-        getCurrencyRate(currencies, currencyFrom, currencyTo);
+        getCurrencyRate(currencyFrom, currencyTo);
     };
 
     const resetForm = (event) => {
         event.preventDefault();
-        setCurrencyFrom("PLN - Złotówka polska");
-        setCurrencyTo("USD - Dolar amerykański");
+        setCurrencyFrom(rates[0].code);
+        setCurrencyTo(rates[1].code);
         setResult("");
         setCurrencyRate("");
     };
@@ -95,9 +96,9 @@ const Form = () => {
                             value={currencyFrom}
                             onChange={({ target }) => setCurrencyFrom(target.value)}
                         >
-                            {currencies.map((currency) => (
-                                <option key={currency.name}>
-                                    {currency.name}
+                            {Object.keys(rates).map((currency) => (
+                                <option key={currency.code}>
+                                    {currency.code}
                                 </option>
                             ))}
                         </StyledInput>
@@ -113,9 +114,9 @@ const Form = () => {
                             value={currencyTo}
                             onChange={({ target }) => setCurrencyTo(target.value)}
                         >
-                            {currencies.map((currency) => (
-                                <option key={currency.name}>
-                                    {currency.name}
+                            {Object.keys(rates).map((currency) => (
+                                <option key={currency.code}>
+                                    {currency.code}
                                 </option>
                             ))}
                         </StyledInput>
