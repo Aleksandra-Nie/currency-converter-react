@@ -10,11 +10,11 @@ const Form = () => {
     const [amount, setAmount] = useState("");
     const [result, setResult] = useState({});
     const [currencyRate, setCurrencyRate] = useState({});
+    const [currencyFrom, setCurrencyFrom] = useState("EUR");
+    const [currencyTo, setCurrencyTo] = useState("PLN");
     const inputRef = useRef(null);
     const ratesData = useRatesData();
     const rates = ratesData.currencyData;
-    const [currencyFrom, setCurrencyFrom] = useState(rates[0].code);
-    const [currencyTo, setCurrencyTo] = useState(rates[1].code);
 
     const getResult = (amount, currencyFrom, currencyTo) => {
         const currencyFromRate = rates.find((currency) => currency.code === currencyFrom).value;
@@ -54,8 +54,8 @@ const Form = () => {
 
     const resetForm = (event) => {
         event.preventDefault();
-        setCurrencyFrom(rates[0].code);
-        setCurrencyTo(rates[1].code);
+        setCurrencyFrom("EUR");
+        setCurrencyTo("PLN");
         setResult("");
         setCurrencyRate("");
     };
