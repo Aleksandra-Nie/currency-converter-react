@@ -12,13 +12,10 @@ const Form = () => {
     const [currencyRate, setCurrencyRate] = useState({});
     const inputRef = useRef(null);
     const ratesData = useRatesData();
-    const rates = ratesData.currencyData;
-    const [currencyFrom, setCurrencyFrom] = useState(rates[0].code);
-    const [currencyTo, setCurrencyTo] = useState(rates[1].code);
 
-    const getResult = (amount, currencyFrom, currencyTo) => {
-        const currencyFromRate = rates.find((currency) => currency.code === currencyFrom).value;
-        const currencyToRate = rates.find((currency) => currency.code === currencyTo).value;
+    const getResult = (amount, currencies, currencyFrom, currencyTo) => {
+        const currencyFromRate = currencies.find((currency) => currency.code === currencyFrom).value;
+        const currencyToRate = currencies.find((currency) => currency.code === currencyTo).value;
 
         setResult({
             currencyFrom: (currencyFrom).slice(0, 3),
