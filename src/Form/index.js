@@ -2,8 +2,13 @@ import { useState, useRef } from 'react';
 import Result from "../Result";
 import RateResult from "../RateResult";
 import Clock from "../Clock";
+<<<<<<< HEAD
 import { StyledFieldset, StyledLegend, StyledLabelText, StyledInput, StyledButton, Message } from "./styled";
 import { useRatesData } from './useRatesData.js';
+=======
+import { StyledFieldset, StyledLegend, StyledLabelText, StyledInput, StyledButton } from "./styled";
+import { useRatesData } from '../useRatesData.js';
+>>>>>>> 36099242aa52862f11f1db37b7b0dae220cfdfa4
 
 const Form = () => {
     const [amount, setAmount] = useState("");
@@ -13,8 +18,11 @@ const Form = () => {
     const [currencyRate, setCurrencyRate] = useState({});
     const inputRef = useRef(null);
     const ratesData = useRatesData();
+<<<<<<< HEAD
 
     const currencies = ratesData.data;
+=======
+>>>>>>> 36099242aa52862f11f1db37b7b0dae220cfdfa4
 
     const getResult = (amount, currencies, currencyFrom, currencyTo) => {
         const currencyFromRate = currencies.find((currency) => currency.code === currencyFrom).value;
