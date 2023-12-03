@@ -6,9 +6,10 @@ A currency converter is a tool that allows you to convert the value of one curre
 - GBP
 - AUD
 - PLN
+  
 To use a currency converter, you typically enter the amount of money you want to convert, select the currency you are converting from, and then choose the currency you want to convert to. The converter will then display the converted amount based on the current exchange rate between the two currencies. Below short demonstration:
 
-![currency-converter-react](images/Animation2.gif)
+![currency-converter-react](src/images/Animation2.gif)
 ## Demo
 https://aleksandra-nie.github.io/currency-converter-react/
 ## Tools
