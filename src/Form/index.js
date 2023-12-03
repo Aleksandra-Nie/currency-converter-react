@@ -109,7 +109,10 @@ const Form = () => {
                                     onChange={({ target }) => setCurrencyFrom(target.value)}
                                 >
                                     {Object.keys(rates).map((currency) => (
-                                        <option key={currency.code}>
+                                        <option
+                                            key={currency.code}
+                                            value={currency.code}
+                                        >
                                             {currency.code}
                                         </option>
                                     ))}
@@ -127,7 +130,10 @@ const Form = () => {
                                     onChange={({ target }) => setCurrencyTo(target.value)}
                                 >
                                     {Object.keys(rates).map((currency) => (
-                                        <option key={currency.code}>
+                                        <option
+                                            key={currency.code}
+                                            value={currency.code}
+                                        >
                                             {currency.code}
                                         </option>
                                     ))}
