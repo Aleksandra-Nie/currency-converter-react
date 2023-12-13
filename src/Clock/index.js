@@ -1,4 +1,4 @@
-import { useCurrentDate } from "../useCurrentDate";
+import { useCurrentDate } from "./useCurrentDate";
 import { StyledClock } from "./styled";
 
 const formatDate = {

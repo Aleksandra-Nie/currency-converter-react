@@ -4,6 +4,7 @@ import RateResult from "../RateResult";
 import Clock from "../Clock";
 import { StyledFieldset, StyledLegend, StyledLabelText, StyledInput, StyledButton, Message } from "./styled";
 import { useRatesData } from './useRatesData';
+import Footer from "../Footer";
 
 const Form = () => {
 
@@ -23,8 +24,8 @@ const Form = () => {
         setResult({
             currencyFrom,
             currencyTo,
-            inputAmount: (+amount).toFixed(2),
-            resultAmount: (amount * rates[currencyFromRate].value / rates[currencyToRate].value).toFixed(2)
+            inputAmount: +amount,
+            resultAmount: (amount / rates[currencyFromRate].value * rates[currencyToRate].value).toFixed(2)
         });
     };
 
@@ -36,9 +37,9 @@ const Form = () => {
         setCurrencyRate({
             currencyFrom,
             currencyTo,
-            currencyRateResult: (rates[currencyFromRate].value / rates[currencyToRate].value).toFixed(currencyFrom === currencyTo ? 0 : 4)
+            currencyRateResult: (rates[currencyToRate].value / rates[currencyFromRate].value).toFixed(currencyFrom === currencyTo ? 0 : 4)
         });
-    };
+    }
 
     const currencyInput = () => {
         getCurrencyRate(currencyFrom, currencyTo);
@@ -158,6 +159,9 @@ const Form = () => {
                                 onClick={resetForm}
                                 type="reset">Resetuj</StyledButton>
                         </p>
+                        <Footer
+                            ratesData={ratesData}
+                        />
                     </>
                 )}
             </StyledFieldset>

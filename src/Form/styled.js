@@ -63,6 +63,8 @@ export const Message = styled.p`
   text-align: center;
   padding: 20px;
   font-size: 20px;
+  line-height: 1.5;
+  
     ${({ $loading }) => $loading && css`
         color: ${({ theme }) => theme.color.pastelGreen};
     `};
