@@ -1,49 +1,34 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import Result from "../Result";
 import RateResult from "../RateResult";
 import Clock from "../Clock";
 import { StyledFieldset, StyledLegend, StyledLabelText, StyledInput, StyledButton, Message } from "./styled";
-import { useRatesData } from './useRatesData';
 import Footer from "../Footer";
+import { useResult } from "./useResult";
+import { useRatesData } from "./useRatesData";
 
 const Form = () => {
 
-    const [amount, setAmount] = useState("");
-    const [result, setResult] = useState({});
-    const [currencyRate, setCurrencyRate] = useState({});
-    const [currencyFrom, setCurrencyFrom] = useState("EUR");
-    const [currencyTo, setCurrencyTo] = useState("PLN");
-    const inputRef = useRef(null);
+    const {
+        result,
+        amount,
+        currencyFrom,
+        currencyTo,
+        currencyRate,
+        setAmount,
+        setCurrencyFrom,
+        setCurrencyTo,
+        getCurrencyRate,
+        getResult,
+        currencyInput,
+        setResult,
+        setCurrencyRate,
+    } = useResult();
+
     const ratesData = useRatesData();
     const rates = ratesData.currencyData;
 
-    const getResult = (amount, currencyFrom, currencyTo) => {
-        const currencyFromRate = Object.keys(rates).find((currency) => currency === currencyFrom);
-        const currencyToRate = Object.keys(rates).find((currency) => currency === currencyTo);
-
-        setResult({
-            currencyFrom,
-            currencyTo,
-            inputAmount: +amount,
-            resultAmount: (amount / rates[currencyFromRate].value * rates[currencyToRate].value).toFixed(2)
-        });
-    };
-
-    const getCurrencyRate = (currencyFrom, currencyTo) => {
-        const currencyFromRate = Object.keys(rates).find((currency) => currency === currencyFrom);
-        const currencyToRate = Object.keys(rates).find((currency) => currency === currencyTo);
-
-
-        setCurrencyRate({
-            currencyFrom,
-            currencyTo,
-            currencyRateResult: (rates[currencyToRate].value / rates[currencyFromRate].value).toFixed(currencyFrom === currencyTo ? 0 : 4)
-        });
-    }
-
-    const currencyInput = () => {
-        getCurrencyRate(currencyFrom, currencyTo);
-    };
+    const inputRef = useRef(null);
 
     const onFormSubmit = (event) => {
         event.preventDefault();
