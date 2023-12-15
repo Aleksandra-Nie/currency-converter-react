@@ -1,36 +1,31 @@
 # Currency-converter
-A currency converter is a tool that allows you to convert the value of one currency into another. Additionaly, depending on the currency you choose, it shows currency exchange rate. The currencies used in the converter are the following: 
-- EUR
-- CHF
-- USD
-- GBP
-- AUD
-- PLN
+A currency converter is a tool that allows you to convert the value of one currency into another. Additionaly, depending on the currency you choose, it shows currency exchange rate. 
   
 To use a currency converter, you typically enter the amount of money you want to convert, select the currency you are converting from, and then choose the currency you want to convert to. The converter will then display the converted amount based on the current exchange rate between the two currencies. Below short demonstration:
 
 ![currency-converter-react](src/images/Animation2.gif)
 ## Demo
 https://aleksandra-nie.github.io/currency-converter-react/
-## Tools
-- HTML
-- CSS
-- JavaScript
-- BEM convention
-- Normalize
+## Technologies
+
+| HTML          | CSS                | JavaScript                        | ReactJS                                   |
+|---------------|--------------------|-----------------------------------|-------------------------------------------|
+| Google Fonts  | Normalize CSS      | ES6                               | create-react-app                          |
+|               | grid               | JSON                              | Webpack                                   |
+|               | flex               | Error handling (try, catch)       | Babel                                     |
+|               | media queries      | API request                       | React DOM                                 |
+|               | BEM                | fetch & axios                     | useState, useEffect, useRef               |
+|               |                    | Promise, async / await            | Custom hooks                              |
+|               |                    |                                   | setInterval, setTimeout                   |
+|               |                    |                                   | Styled Components                         |
+
+
+
 ## Features
-- Currency converter is responsive on both website and mobile phone
-- Bem convention was added due to easier code review
+Currency converter is responsive on both website and mobile phone.
 ## Additional information
-Currency exchange rates were based according to the average exchange rate of the National Bank of Poland on 23.03.2023:
-- 1 USD = 4.3981 PLN
-- 1 EUR = 4.6871 PLN
-- 1 GBP = 5.2836 PLN
-- 1 CHF = 4.7156 PLN
-- 1 AUD = 2.9292 PLN
-## Future improvements
-- include more currencies
-- data based on the latest currency exchange rates
+Current exchange rates come from app.currencyapi.com.\
+The app has loading and error state handling. If data becomes corrupted or there is a connectivity issue, an error message will be displayed.
 ## Available Scripts
 In the project directory, you can run:
 ### `npm start`
