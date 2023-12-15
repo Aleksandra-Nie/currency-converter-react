@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
+// const API_JSON = "currency-converter-react/currencies.json";
+const API_URL = "https://api.currencyapi.com/v3/latest?apikey=cur_live_x3gX5H8Zq1f9mQN5zsjAB7yMY3VZ567nubgDSugG";
+
 export const useRatesData = () => {
 
     const [ratesData, setRatesData] = useState({
@@ -11,7 +14,7 @@ export const useRatesData = () => {
     const fetchRates = () => {
         (async () => {
             try {
-                const response = await axios.get("currency-converter-react/currencies.json");
+                const response = await axios.get(API_URL);
 
                 setRatesData({
                     status: "success",
