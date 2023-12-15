@@ -28,7 +28,6 @@ export const useResult = () => {
         const currencyFromRate = Object.keys(rates).find((currency) => currency === currencyFrom);
         const currencyToRate = Object.keys(rates).find((currency) => currency === currencyTo);
 
-
         setCurrencyRate({
             currencyFrom,
             currencyTo,
