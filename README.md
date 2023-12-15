@@ -25,6 +25,7 @@ https://aleksandra-nie.github.io/currency-converter-react/
 Currency converter is responsive on both website and mobile phone.
 ## Additional information
 Current exchange rates come from app.currencyapi.com.\
+The app contains current date and time in one second intervals.\
 The app has loading and error state handling. If data becomes corrupted or there is a connectivity issue, an error message will be displayed.\
 ![currency-converter-react](src/images/Error_handling.png)
 ## Available Scripts
