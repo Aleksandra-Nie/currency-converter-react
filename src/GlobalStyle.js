@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import background from "./images/background.jpg";
-import backgroundSecond from "./images/background2.jpg";
+import background from "./images/background3.png";
 
 export const GlobalStyle = createGlobalStyle` 
 html {
@@ -13,9 +12,9 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
-  background-image: url("${background}"), url("${backgroundSecond}");
+  background-image: url("${background}");
   background-position: center;
-  background-size: contain, cover;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   overflow: auto;
