@@ -50,8 +50,8 @@ const Form = () => {
         <form
             onSubmit={onFormSubmit}
         >
-            <Clock />
             <StyledFieldset>
+                <Clock />
                 <StyledLegend>Kalkulator walutowy</StyledLegend>
                 {ratesData.status === "loading" ? (
                     <Message $loading>
