@@ -1,8 +1,17 @@
 import styled, { css } from "styled-components";
 
 export const StyledFieldset = styled.fieldset`
-    border-radius: 5px;
+    border-radius: 25px;
     margin-bottom: 20px;
+    background-color: ${({ theme }) => theme.color.whiteLilac};
+    box-shadow: 20px 20px 30px ${({ theme }) => theme.color.black};
+    border: 1px solid ${({ theme }) => theme.color.black};
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 20px;
+    }
 `;
 
 export const StyledLegend = styled.legend`
@@ -10,7 +19,7 @@ export const StyledLegend = styled.legend`
     font-weight: bold;
     font-size: 20px;
     padding: 10px 20px;
-    background-color: rgb(208, 227, 252);
+    background-color: ${({ theme }) => theme.color.blueLight};
     border-radius: 5px;
 `;
 
@@ -27,12 +36,12 @@ export const StyledInput = styled.input`
     max-width: 300px;
     width: 100%;
     border-radius: 5px;
-    border: 1px solid grey;
+    border: 1px solid ${({ theme }) => theme.color.gray};
     line-height: 1px;
     margin-top: 20px;
 
     &:invalid {
-        border: 2px solid red;
+        border: 2px solid ${({ theme }) => theme.color.red};
     }
 `;
 
@@ -47,6 +56,11 @@ export const StyledButton = styled.button`
     font-weight: bold;
     border-radius: 50px;
     background-color: ${({ theme }) => theme.color.primary};
+
+    
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        margin-top: 5px;
+    }
 
     ${({ $reset }) => $reset && css`
         margin-top: 5px;
