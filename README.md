@@ -16,9 +16,9 @@ https://aleksandra-nie.github.io/currency-converter-react/
 |               | media queries      | API request                       | React DOM                                 |
 |               | BEM                | fetch & axios                     | useState, useEffect, useRef               |
 |               |                    | Promise, async / await            | Custom hooks                              |
-|               |                    |                                   | setInterval, setTimeout                   |
+|               |                    | Redux                             | setInterval, setTimeout                   |
 |               |                    |                                   | Styled Components                         |
-
+|               |                    |                                   | react-redux                               |
 
 
 ## Features
